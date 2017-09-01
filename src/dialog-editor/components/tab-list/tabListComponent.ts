@@ -23,7 +23,7 @@ class TabListController {
    */
   public $onInit() {
     // load tabs data from the service
-    this.tabList = this.DialogEditor.getDialogTabs();
+    this.tabList = this.DialogEditor.getDialogTabs(); // Mutable ? kdyz zmenim tabList, zmeni se i data v Dialog Editor
     // set active tab
     if (this.tabList.length !== 0) {
       this.DialogEditor.activeTab = 0;
@@ -38,7 +38,7 @@ class TabListController {
       stop: (e: any, ui: any) => {
         let sortedTab = ng.element(ui.item).scope().$parent;
         let tabList = sortedTab.vm.tabList;
-        this.DialogEditor.updatePositions(tabList);
+        this.DialogEditor.updatePositions(tabList); //
         let activeTab: any = _.find(tabList, {active: true});
         this.DialogEditor.activeTab = activeTab.position;
       },
@@ -58,6 +58,7 @@ class TabListController {
     // create a new tab
     let nextIndex = this.tabList.length;
     this.tabList.push(
+      //
       {
         description: __('New tab ') + nextIndex,
         display: 'edit',
@@ -93,10 +94,10 @@ class TabListController {
       }
     }
     // remove tab with matching id
-    _.remove(this.tabList, (tab: any) => tab.position === id);
+    _.remove(this.tabList, (tab: any) => tab.position === id); //
     // update indexes of other tabs after removing
     if (this.tabList.length !== 0) {
-      this.DialogEditor.updatePositions(this.tabList);
+      this.DialogEditor.updatePositions(this.tabList); //
     } else {
       return;
     }

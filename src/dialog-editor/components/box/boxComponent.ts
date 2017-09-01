@@ -61,6 +61,7 @@ class BoxController {
    * @function addBox
    */
   public addBox() {
+    //
     this.dialogTabs[this.DialogEditor.activeTab].dialog_groups
       .push(
         {
@@ -74,7 +75,7 @@ class BoxController {
     // update indexes of other boxes after adding a new one
     this.DialogEditor.updatePositions(
       this.dialogTabs[this.DialogEditor.activeTab].dialog_groups
-    );
+    ); //
   }
 
   /**
@@ -87,11 +88,11 @@ class BoxController {
     _.remove(
       this.dialogTabs[this.DialogEditor.activeTab].dialog_groups,
       (box: any) => box.position === id
-    );
+    ); //
     // update indexes of other boxes after removing
     this.DialogEditor.updatePositions(
       this.dialogTabs[this.DialogEditor.activeTab].dialog_groups
-    );
+    ); //
   }
 
   /**
