@@ -218,6 +218,18 @@ class ModalController {
   }
 
   /**
+   * Removes default value by setting `default_value` as
+   * `null`
+   * @memberof ModalFieldController
+   * @function clearDefaultValue
+   */
+  public clearDefaultValue() {
+    console.log(this.modalData.default_value);
+    // FIXME: https://stackoverflow.com/questions/12729122/angularjs-prevent-error-digest-already-in-progress-when-calling-scope-apply
+    this.modalData.default_value = null;
+  }
+
+  /**
    * Remove entry for radio button / dropdown select
    * @memberof ModalFieldController
    * @function removeEntry
@@ -312,6 +324,7 @@ class ModalController {
       categories="modalCtrl.parent.categories"
       add-entry="modalCtrl.parent.addEntry"
       remove-entry="modalCtrl.parent.removeEntry"
+      clear-default-value="modalCtrl.parent.clearDefaultValue"
       current-category-entries="modalCtrl.parent.currentCategoryEntries"
       resolve-categories="modalCtrl.parent.resolveCategories"
       modal-tab-is-set="modalCtrl.parent.modalTabIsSet"

@@ -25,6 +25,7 @@ export class AbstractModal {
     categories: '=?',
     addEntry: '=?',
     removeEntry: '=?',
+    clearDefaultValue: '=?',
     currentCategoryEntries: '=?',
     setupCategoryOptions: '=?',
     updateDialogFieldResponders: '=?',

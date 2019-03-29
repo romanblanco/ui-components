@@ -61,6 +61,7 @@ export default class ModalFieldTemplate {
     categories: '=?',
     addEntry: '=?',
     removeEntry: '=?',
+    clearDefaultValue: '=?',
     currentCategoryEntries: '=?',
     setupCategoryOptions: '=?',
     resolveCategories: '=?',
