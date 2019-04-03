@@ -22,6 +22,9 @@ class FieldController {
    * @function $onInit
    */
   public $onInit() {
+    console.log('fieldComponent.ts#$onInit: dialog_fields:',
+                JSON.stringify(this.DialogEditor.data.content[0].
+                               dialog_tabs[0].dialog_groups[0].dialog_fields));
     this.service = this.DialogEditor;
   }
 
@@ -44,6 +47,8 @@ class FieldController {
    * @function convertValuesToArray
    */
   public convertValuesToArray() {
+    console.log('#convertValuesToArray: this.fieldData.default_value:',
+                JSON.stringify(this.fieldData.default_value));
     this.fieldData.default_value = angular.fromJson(this.fieldData.default_value);
   }
 

@@ -12,6 +12,7 @@ export default class DialogEditorService {
    */
   public setData(data: any) {
     this.data = data;
+    console.log('#setData: data:', JSON.stringify(this.data.content[0].dialog_tabs[0].dialog_groups[0]));
     this.undefinedAttrsToBoolean();
     // FIXME: Compensation of default values until it is been resolved in the API
     this.forEachDialogField((field: any) => {

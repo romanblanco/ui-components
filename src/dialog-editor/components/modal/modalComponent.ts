@@ -224,8 +224,9 @@ class ModalController {
    * @function clearDefaultValue
    */
   public clearDefaultValue() {
-    console.log(this.modalData.default_value);
-    // FIXME: https://stackoverflow.com/questions/12729122/angularjs-prevent-error-digest-already-in-progress-when-calling-scope-apply
+    console.log('#clearDefaultValue: default_value', JSON.stringify(this.modalData.default_value));
+    // FIXME: https://stackoverflow.com/questions/12729122/
+    //        angularjs-prevent-error-digest-already-in-progress-when-calling-scope-apply
     this.modalData.default_value = null;
   }
 

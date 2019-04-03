@@ -28,6 +28,7 @@ class ModalFieldController {
   }
 
   public $onChanges(changesObj) {
+    console.log('$onChanges: changesObj:', JSON.stringify(changesObj));
     if (changesObj.modalData && changesObj.modalData.default_value === []) {
       this.modalData.default_value = '';
     }
