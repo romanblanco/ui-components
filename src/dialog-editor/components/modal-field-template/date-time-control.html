@@ -8,14 +8,10 @@
              switch-off-text="{{'No'|translate}}">
     </div>
     <div pf-form-group pf-label="{{'Default value'|translate}}">
-      <div class="dateTimePadding">
-        <input ng-model="vm.modalData.default_value"
-               pf-datepicker
-               date="vm.modalData.default_value">
-      </div>
-      <div >
-        <uib-timepicker ng-model="vm.modalData.default_value"></uib-timepicker>
-      </div>
+      <input class="timeline-date-input"
+             pf-date-timepicker
+             options="vm.modalData.option"
+             date="vm.modalData.default_value">
       <button class="btn btn-default" ng-click="vm.clearDefaultValue()" translate>Clear</button>
     </div>
     <div pf-form-group pf-label="{{'Read only'|translate}}">
