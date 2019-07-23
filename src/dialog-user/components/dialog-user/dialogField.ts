@@ -84,12 +84,23 @@ export class DialogFieldController {
    */
   public changesHappened() {
     this.validateField();
-
+    // https://bugzilla.redhat.com/show_bug.cgi?id=1713715
+    // - to improve the performance and not running the same method while inputing,
+    //   we can use throttle or debounce to give the user more time to finish the input
+    // no  https://lodash.com/docs/4.17.14#throttle
+    // yes https://lodash.com/docs/4.17.14#debounce
+    // https://css-tricks.com/debouncing-throttling-explained-examples/
+    // https://ux.stackexchange.com/questions/95336/how-long-should-the-debounce-timeout-be
+    // - TODO: look into options to give user an option to set field not to be
+    //         evaluated until unfocused
     const field = this.dialogField;
-    this.onUpdate({
-      dialogFieldName: field.name,
-      value: field.default_value,
-    });
+    this.onUpdate({ dialogFieldName: field.name, value: field.default_value, });
+    // const update = function(field) {
+    //   this.onUpdate({ dialogFieldName: field.name, value: field.default_value, });
+    //   console.log('updated just now!');
+    // };
+    // console.log('about to do the update');
+    // _.debounce(update, 500);
   }
 
   /**
